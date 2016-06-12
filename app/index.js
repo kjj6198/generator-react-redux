@@ -18,6 +18,7 @@ module.exports = generators.Base.extend({
       name: answers.name || "",
     });  
   },
+
   _logger(type) {
     var args = Array.prototype.slice.call(arguments);
     if(type === "info") {
@@ -68,9 +69,10 @@ module.exports = generators.Base.extend({
     this._dummyCopy('.babelrc');
     this._dummyCopy('.eslintrc');
     this._dummyCopy('.gitignore');
+  },
+
+  end() {
+    yosay('React redux setup was successfully installed! Happy Coding!');
   }
-
-
-
 
 })
