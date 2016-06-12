@@ -6,7 +6,7 @@ var fs = require('fs');
 var path = require('path');
 
 module.exports = generators.Base.extend({
-  _createFolder(answers) {
+  _createFiles(answers) {
     this.fs.copy(this.sourceRoot(), this.destinationRoot());
     
     this.fs.copyTpl(this.sourceRoot() + '/package.json', this.destinationRoot() + '/package.json', {
@@ -16,7 +16,7 @@ module.exports = generators.Base.extend({
 
     this.fs.copyTpl(this.sourceRoot() + '/bower.json', this.destinationRoot() + '/bower.json', {
       name: answers.name || "",
-    });  
+    });    
   },
 
   _logger(type) {
@@ -50,19 +50,12 @@ module.exports = generators.Base.extend({
   },
 
   prompting: function () {
-    return this.prompt(this._getPrompt(), function(answers) {
-      this._createFolder(answers);
+    var cb = this.async();
+    this.prompt(this._getPrompt(), function(answers) {
+      this._createFiles(answers);
     }.bind(this));
-  },
 
-  install() {
-    this.installDependencies({
-      npm: true,
-      bower: true,
-      callback: function() {
-        chalk.bold('Denpendencies successfully installed');
-      }
-    });
+    cb();
   },
 
   configuring() {
