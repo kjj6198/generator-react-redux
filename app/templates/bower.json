@@ -1,0 +1,19 @@
+{
+  "name": "<%= name %>",
+  "version": "0.0.0",
+  "authors": [
+    "Kalan <kjj6198@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "sexy": "0.0.1"        
+  }
+}

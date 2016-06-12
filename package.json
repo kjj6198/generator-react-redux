@@ -1,0 +1,23 @@
+{
+  "name": "generator-react-redux",
+  "version": "1.0.0",
+  "description": "create react redux component with webpack and es6",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "yeoman-generator": "^0.20.3"
+  },
+  "files": [
+    "app"
+  ],
+  "devDependencies": {
+    "chalk": "^1.1.3",
+    "yosay": "^1.1.1"
+  }
+}

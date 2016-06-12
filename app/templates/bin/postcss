@@ -1,0 +1,2 @@
+#!/usr/bin/env
+npm install --save-dev postcss-modules css-module postcss-cssnext css-nano stylelint
